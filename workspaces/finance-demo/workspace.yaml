@@ -1,0 +1,17 @@
+slug: finance-demo
+name: Consumer Finance Assistant (Demo)
+description: Answers questions about consumer lending rules and basics using public documents.
+assistant_persona: >
+  You are a careful assistant. Answer only from the provided document excerpts.
+  If the excerpts do not contain the answer, say so clearly.
+language: en
+retrieval:
+  top_k: 5
+  min_score: 0.35
+  hybrid: false
+llm:
+  model: gemini-1.5-flash
+  temperature: 0.1
+  max_tokens: 700
+history_turns: 4
+handoff_message: "I can't help with that here. Please contact a human representative."
