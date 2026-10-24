@@ -13,8 +13,8 @@ from sqlalchemy import (
     Integer,
     String,
     Text,
-    text,
 )
+from sqlalchemy import text as sql_text
 from sqlalchemy.dialects.postgresql import JSONB, TSVECTOR
 from sqlalchemy.orm import relationship
 from sqlalchemy.types import DateTime
@@ -72,7 +72,7 @@ class Chunk(Base):
     embedding = Column(Vector(384), nullable=False)
     tsv = Column(
         TSVECTOR,
-        server_default=text("to_tsvector('english', text)"),
+        server_default=sql_text("to_tsvector('english', text)"),
     )
 
     workspace = relationship("Workspace", back_populates="chunks")
