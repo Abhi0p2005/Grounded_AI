@@ -120,13 +120,12 @@ async def health_check():
     )
 
 
-# Import and include routers (will be added in later steps)
-# from app.api import workspaces, documents, chat, logs, evals
-# app.include_router(workspaces.router, prefix="/api/workspaces", tags=["workspaces"])
-# app.include_router(documents.router, prefix="/api/workspaces", tags=["documents"])
-# app.include_router(chat.router, prefix="/api/workspaces", tags=["chat"])
-# app.include_router(logs.router, prefix="/api/workspaces", tags=["logs"])
-# app.include_router(evals.router, prefix="/api/workspaces", tags=["evals"])
+# Import and include routers
+from app.api import chat, documents, workspaces
+
+app.include_router(workspaces.router, prefix="/api/workspaces", tags=["workspaces"])
+app.include_router(documents.router, prefix="/api/workspaces", tags=["documents"])
+app.include_router(chat.router, prefix="/api/workspaces", tags=["chat"])
 
 
 @app.get("/")
