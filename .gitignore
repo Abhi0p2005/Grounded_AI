@@ -62,8 +62,21 @@ out/
 *.pid
 
 # Project specific
-workspaces/*/docs/*.pdf
-workspaces/*/docs/*.docx
 data/
-models/
 .sentence-transformers/
+
+# Keep dummy PDFs but ignore user-uploaded docs
+# (dummy PDFs are already committed)
+
+# Temporary files
+*.tmp
+*.temp
+*.swp
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Docker volumes
+postgres_data/
+redis_data/
